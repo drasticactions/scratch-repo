@@ -1,0 +1,61 @@
+﻿@using System.Threading.Tasks
+@using DiaperChrisFitbitWeb.Model
+@model DiaperChrisFitbitWeb.Model.GameFitbitModel
+
+    
+@{
+    ViewBag.Title = "Slenderman";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div style="height: 300px;" id="target"></div>
+</div>
+
+<div class="row">
+    @foreach (var item in Model.FitbitResults)
+    {
+        <div class="col-md-4">
+            <a href="/img/9-full/@item.FileName" id="@item.StartTime" data-title="Heart Rate: @item.HeartRate" data-toggle="lightbox" class="thumbnail">
+                <img class="lazy" data-original="/img/9-full/@item.FileName" alt="@item.FileName" style="width: 300px; height: 169px">
+                <p class="text-center">Heart Rate: @item.HeartRate </p>
+                <p class="text-center">Time: @item.Time </p>
+            </a>
+        </div>
+    }
+</div>
+
+@section scripts
+{
+    <script src="/js/slenderman.js" charset="utf-8"></script>
+    <script>
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+
+        $(function () {
+            $("img.lazy").lazyload();
+        });
+
+        var chart = new tauCharts.Chart({
+            type: 'line',
+            x: 'Time',
+            y: 'HeartRate',
+            data: slenderman,
+            plugins: [
+                tauCharts.api.plugins.get('quick-filter')(['HeartRate', 'Time']),
+                tauCharts.api.plugins.get('legend')(),
+                tauCharts.api.plugins.get('tooltip')()
+            ],
+            guide: {
+                x: { autoScale: false },
+                y: { autoScale: false}
+            }
+        });
+        chart.renderTo('#target');
+        chart.on('elementclick', function (chartRef, e) {
+            $('#' + e.data.StartTime).ekkoLightbox();
+            });
+    </script>
+}

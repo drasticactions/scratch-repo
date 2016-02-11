@@ -16,8 +16,8 @@
     @foreach (var item in Model.FitbitResults)
     {
         <div class="col-md-4">
-            <a href="/img/1-full/@item.FileName" data-title="Heart Rate: @item.HeartRate" data-toggle="lightbox" class="thumbnail">
-                <img src="/img/1-full/@item.FileName" alt="@item.FileName" style="width: 300px; height: 169px">
+            <a href="/img/1-full/@item.FileName" id="@item.StartTime" data-title="Heart Rate: @item.HeartRate" data-toggle="lightbox" class="thumbnail">
+                <img class="lazy" data-original="/img/1-full/@item.FileName" alt="@item.FileName" style="width: 300px; height: 169px">
                 <p class="text-center">Heart Rate: @item.HeartRate </p>
                 <p class="text-center">Time: @item.Time </p>
             </a>
@@ -32,6 +32,10 @@
         $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
             event.preventDefault();
             $(this).ekkoLightbox();
+        });
+
+        $(function () {
+            $("img.lazy").lazyload();
         });
 
         var chart = new tauCharts.Chart({
@@ -50,5 +54,8 @@
             }
         });
         chart.renderTo('#target');
+        chart.on('elementclick', function (chartRef, e) {
+            $('#' + e.data.StartTime).ekkoLightbox();
+            });
     </script>
 }

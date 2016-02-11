@@ -35,5 +35,45 @@ namespace DiaperChrisFitbitWeb.Controllers
                 FitbitResults = result
             });
         }
+
+        public IActionResult TheInterview()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/theinterview.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
+        public IActionResult ClownHouse()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/clownhouse.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
+        public IActionResult Slenderman()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/slenderman.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
+        public IActionResult Despair()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/despair.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
     }
 }

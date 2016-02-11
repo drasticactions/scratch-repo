@@ -44,14 +44,14 @@ namespace DiaperChrisFitbitUwp
         {
             var fitbitRates = new List<FitbitRate>();
             var failCount = 0;
-            StorageFolder pictureFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\1-full");
+            StorageFolder pictureFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\9-full");
             IReadOnlyList<StorageFile> fileList = await pictureFolder.GetFilesAsync();
             foreach (StorageFile file in fileList)
             {
                 var filename = file.DisplayName;
                 var splitfilename = filename.Split('-');
 
-                var writeableBitmap = await CropBitmap.GetCroppedBitmapAsync(file, new Point(30, 10), new Size(30, 20), 2);
+                var writeableBitmap = await CropBitmap.GetCroppedBitmapAsync(file, new Point(1194, 2), new Size(30, 20), 2);
                 var result = await ocrEngine.RecognizeAsync(SoftwareBitmap.CreateCopyFromBuffer(
                     writeableBitmap.PixelBuffer,
                     BitmapPixelFormat.Bgra8,
@@ -60,8 +60,8 @@ namespace DiaperChrisFitbitUwp
                     ));
                 try
                 {
-                    var wordInt = Convert.ToInt32(new String(result.Text.Where(Char.IsDigit).ToArray()));
                     var starttime = Convert.ToInt32(splitfilename[1].Trim());
+                    var wordInt = Convert.ToInt32(new String(result.Text.Where(Char.IsDigit).ToArray()));
                     fitbitRates.Add(new FitbitRate()
                     {
                         StartTime = starttime,
