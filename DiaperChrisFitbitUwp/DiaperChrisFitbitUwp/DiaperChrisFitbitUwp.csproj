@@ -1,0 +1,988 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{69F1931F-8830-493F-A0FB-17428461E2DE}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DiaperChrisFitbitUwp</RootNamespace>
+    <AssemblyName>DiaperChrisFitbitUwp</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>DiaperChrisFitbitUwp_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CropBitmap.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="DiaperChrisFitbitUwp_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\1-full\Frame0 - 97 - 1.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame10020 - 264 - 4.4.jpg" />
+    <Content Include="Assets\1-full\Frame10080 - 265 - 4.41666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame10140 - 266 - 4.43333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame1020 - 114 - 1.9.jpg" />
+    <Content Include="Assets\1-full\Frame10200 - 267 - 4.45.jpg" />
+    <Content Include="Assets\1-full\Frame10260 - 268 - 4.46666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame10320 - 269 - 4.48333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame10380 - 270 - 4.5.jpg" />
+    <Content Include="Assets\1-full\Frame10440 - 271 - 4.51666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame10500 - 272 - 4.53333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame10560 - 273 - 4.55.jpg" />
+    <Content Include="Assets\1-full\Frame10620 - 274 - 4.56666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame10680 - 275 - 4.58333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame10740 - 276 - 4.6.jpg" />
+    <Content Include="Assets\1-full\Frame1080 - 115 - 1.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame10800 - 277 - 4.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame10860 - 278 - 4.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame10920 - 279 - 4.65.jpg" />
+    <Content Include="Assets\1-full\Frame10980 - 280 - 4.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame11040 - 281 - 4.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame11100 - 282 - 4.7.jpg" />
+    <Content Include="Assets\1-full\Frame11160 - 283 - 4.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame11220 - 284 - 4.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame11280 - 285 - 4.75.jpg" />
+    <Content Include="Assets\1-full\Frame11340 - 286 - 4.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame1140 - 116 - 1.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame11400 - 287 - 4.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame11460 - 288 - 4.8.jpg" />
+    <Content Include="Assets\1-full\Frame11520 - 289 - 4.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame11580 - 290 - 4.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame11640 - 291 - 4.85.jpg" />
+    <Content Include="Assets\1-full\Frame11700 - 292 - 4.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame11760 - 293 - 4.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame11820 - 294 - 4.9.jpg" />
+    <Content Include="Assets\1-full\Frame11880 - 295 - 4.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame11940 - 296 - 4.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame120 - 99 - 1.65.jpg" />
+    <Content Include="Assets\1-full\Frame1200 - 117 - 1.95.jpg" />
+    <Content Include="Assets\1-full\Frame12000 - 297 - 4.95.jpg" />
+    <Content Include="Assets\1-full\Frame12060 - 298 - 4.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame12120 - 299 - 4.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame12180 - 300 - 5.jpg" />
+    <Content Include="Assets\1-full\Frame12240 - 301 - 5.01666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame12300 - 302 - 5.03333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame12360 - 303 - 5.05.jpg" />
+    <Content Include="Assets\1-full\Frame12420 - 304 - 5.06666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame12480 - 305 - 5.08333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame12540 - 306 - 5.1.jpg" />
+    <Content Include="Assets\1-full\Frame1260 - 118 - 1.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame12600 - 307 - 5.11666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame12660 - 308 - 5.13333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame12720 - 309 - 5.15.jpg" />
+    <Content Include="Assets\1-full\Frame12780 - 310 - 5.16666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame12840 - 311 - 5.18333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame12900 - 312 - 5.2.jpg" />
+    <Content Include="Assets\1-full\Frame12960 - 313 - 5.21666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame13020 - 314 - 5.23333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame13080 - 315 - 5.25.jpg" />
+    <Content Include="Assets\1-full\Frame13140 - 316 - 5.26666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame1320 - 119 - 1.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame13200 - 317 - 5.28333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame13260 - 318 - 5.3.jpg" />
+    <Content Include="Assets\1-full\Frame13320 - 319 - 5.31666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame13380 - 320 - 5.33333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame13440 - 321 - 5.35.jpg" />
+    <Content Include="Assets\1-full\Frame13500 - 322 - 5.36666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame13560 - 323 - 5.38333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame13620 - 324 - 5.4.jpg" />
+    <Content Include="Assets\1-full\Frame13680 - 325 - 5.41666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame13740 - 326 - 5.43333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame1380 - 120 - 2.jpg" />
+    <Content Include="Assets\1-full\Frame13800 - 327 - 5.45.jpg" />
+    <Content Include="Assets\1-full\Frame13860 - 328 - 5.46666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame13920 - 329 - 5.48333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame13980 - 330 - 5.5.jpg" />
+    <Content Include="Assets\1-full\Frame14040 - 331 - 5.51666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame14100 - 332 - 5.53333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame14160 - 333 - 5.55.jpg" />
+    <Content Include="Assets\1-full\Frame14220 - 334 - 5.56666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame14280 - 335 - 5.58333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame14340 - 336 - 5.6.jpg" />
+    <Content Include="Assets\1-full\Frame1440 - 121 - 2.01666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame14400 - 337 - 5.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame14460 - 338 - 5.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame14520 - 339 - 5.65.jpg" />
+    <Content Include="Assets\1-full\Frame14580 - 340 - 5.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame14640 - 341 - 5.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame14700 - 342 - 5.7.jpg" />
+    <Content Include="Assets\1-full\Frame14760 - 343 - 5.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame14820 - 344 - 5.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame14880 - 345 - 5.75.jpg" />
+    <Content Include="Assets\1-full\Frame14940 - 346 - 5.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame1500 - 122 - 2.03333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame15000 - 347 - 5.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame15060 - 348 - 5.8.jpg" />
+    <Content Include="Assets\1-full\Frame15120 - 349 - 5.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame15180 - 350 - 5.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame15240 - 351 - 5.85.jpg" />
+    <Content Include="Assets\1-full\Frame15300 - 352 - 5.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame15360 - 353 - 5.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame15420 - 354 - 5.9.jpg" />
+    <Content Include="Assets\1-full\Frame15480 - 355 - 5.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame15540 - 356 - 5.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame1560 - 123 - 2.05.jpg" />
+    <Content Include="Assets\1-full\Frame15600 - 357 - 5.95.jpg" />
+    <Content Include="Assets\1-full\Frame15660 - 358 - 5.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame15720 - 359 - 5.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame15780 - 360 - 6.jpg" />
+    <Content Include="Assets\1-full\Frame15840 - 361 - 6.01666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame15900 - 362 - 6.03333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame15960 - 363 - 6.05.jpg" />
+    <Content Include="Assets\1-full\Frame16020 - 364 - 6.06666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame16080 - 365 - 6.08333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame16140 - 366 - 6.1.jpg" />
+    <Content Include="Assets\1-full\Frame1620 - 124 - 2.06666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame16200 - 367 - 6.11666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame16260 - 368 - 6.13333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame16320 - 369 - 6.15.jpg" />
+    <Content Include="Assets\1-full\Frame16380 - 370 - 6.16666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame16440 - 371 - 6.18333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame16500 - 372 - 6.2.jpg" />
+    <Content Include="Assets\1-full\Frame16560 - 373 - 6.21666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame16620 - 374 - 6.23333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame16680 - 375 - 6.25.jpg" />
+    <Content Include="Assets\1-full\Frame16740 - 376 - 6.26666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame1680 - 125 - 2.08333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame16800 - 377 - 6.28333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame16860 - 378 - 6.3.jpg" />
+    <Content Include="Assets\1-full\Frame16920 - 379 - 6.31666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame16980 - 380 - 6.33333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame17040 - 381 - 6.35.jpg" />
+    <Content Include="Assets\1-full\Frame17100 - 382 - 6.36666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame17160 - 383 - 6.38333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame17220 - 384 - 6.4.jpg" />
+    <Content Include="Assets\1-full\Frame17280 - 385 - 6.41666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame17340 - 386 - 6.43333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame1740 - 126 - 2.1.jpg" />
+    <Content Include="Assets\1-full\Frame17400 - 387 - 6.45.jpg" />
+    <Content Include="Assets\1-full\Frame17460 - 388 - 6.46666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame17520 - 389 - 6.48333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame17580 - 390 - 6.5.jpg" />
+    <Content Include="Assets\1-full\Frame17640 - 391 - 6.51666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame17700 - 392 - 6.53333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame17760 - 393 - 6.55.jpg" />
+    <Content Include="Assets\1-full\Frame17820 - 394 - 6.56666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame17880 - 395 - 6.58333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame17940 - 396 - 6.6.jpg" />
+    <Content Include="Assets\1-full\Frame180 - 100 - 1.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame1800 - 127 - 2.11666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame18000 - 397 - 6.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame18060 - 398 - 6.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame18120 - 399 - 6.65.jpg" />
+    <Content Include="Assets\1-full\Frame18180 - 400 - 6.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame18240 - 401 - 6.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame18300 - 402 - 6.7.jpg" />
+    <Content Include="Assets\1-full\Frame18360 - 403 - 6.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame18420 - 404 - 6.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame18480 - 405 - 6.75.jpg" />
+    <Content Include="Assets\1-full\Frame18540 - 406 - 6.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame1860 - 128 - 2.13333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame18600 - 407 - 6.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame18660 - 408 - 6.8.jpg" />
+    <Content Include="Assets\1-full\Frame18720 - 409 - 6.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame18780 - 410 - 6.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame18840 - 411 - 6.85.jpg" />
+    <Content Include="Assets\1-full\Frame18900 - 412 - 6.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame18960 - 413 - 6.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame19020 - 414 - 6.9.jpg" />
+    <Content Include="Assets\1-full\Frame19080 - 415 - 6.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame19140 - 416 - 6.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame1920 - 129 - 2.15.jpg" />
+    <Content Include="Assets\1-full\Frame19200 - 417 - 6.95.jpg" />
+    <Content Include="Assets\1-full\Frame19260 - 418 - 6.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame19320 - 419 - 6.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame19380 - 420 - 7.jpg" />
+    <Content Include="Assets\1-full\Frame19440 - 421 - 7.01666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame19500 - 422 - 7.03333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame19560 - 423 - 7.05.jpg" />
+    <Content Include="Assets\1-full\Frame19620 - 424 - 7.06666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame19680 - 425 - 7.08333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame19740 - 426 - 7.1.jpg" />
+    <Content Include="Assets\1-full\Frame1980 - 130 - 2.16666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame19800 - 427 - 7.11666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame19860 - 428 - 7.13333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame19920 - 429 - 7.15.jpg" />
+    <Content Include="Assets\1-full\Frame19980 - 430 - 7.16666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame20040 - 431 - 7.18333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame20100 - 432 - 7.2.jpg" />
+    <Content Include="Assets\1-full\Frame20160 - 433 - 7.21666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame20220 - 434 - 7.23333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame20280 - 435 - 7.25.jpg" />
+    <Content Include="Assets\1-full\Frame20340 - 436 - 7.26666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame2040 - 131 - 2.18333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame20400 - 437 - 7.28333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame20460 - 438 - 7.3.jpg" />
+    <Content Include="Assets\1-full\Frame20520 - 439 - 7.31666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame20580 - 440 - 7.33333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame20640 - 441 - 7.35.jpg" />
+    <Content Include="Assets\1-full\Frame20700 - 442 - 7.36666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame20760 - 443 - 7.38333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame20820 - 444 - 7.4.jpg" />
+    <Content Include="Assets\1-full\Frame20880 - 445 - 7.41666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame20940 - 446 - 7.43333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame2100 - 132 - 2.2.jpg" />
+    <Content Include="Assets\1-full\Frame21000 - 447 - 7.45.jpg" />
+    <Content Include="Assets\1-full\Frame21060 - 448 - 7.46666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame21120 - 449 - 7.48333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame21180 - 450 - 7.5.jpg" />
+    <Content Include="Assets\1-full\Frame21240 - 451 - 7.51666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame21300 - 452 - 7.53333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame21360 - 453 - 7.55.jpg" />
+    <Content Include="Assets\1-full\Frame21420 - 454 - 7.56666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame21480 - 455 - 7.58333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame21540 - 456 - 7.6.jpg" />
+    <Content Include="Assets\1-full\Frame2160 - 133 - 2.21666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame21600 - 457 - 7.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame21660 - 458 - 7.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame21720 - 459 - 7.65.jpg" />
+    <Content Include="Assets\1-full\Frame21780 - 460 - 7.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame21840 - 461 - 7.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame21900 - 462 - 7.7.jpg" />
+    <Content Include="Assets\1-full\Frame21960 - 463 - 7.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame22020 - 464 - 7.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame22080 - 465 - 7.75.jpg" />
+    <Content Include="Assets\1-full\Frame22140 - 466 - 7.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame2220 - 134 - 2.23333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame22200 - 467 - 7.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame22260 - 468 - 7.8.jpg" />
+    <Content Include="Assets\1-full\Frame22320 - 469 - 7.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame22380 - 470 - 7.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame22440 - 471 - 7.85.jpg" />
+    <Content Include="Assets\1-full\Frame22500 - 472 - 7.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame22560 - 473 - 7.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame22620 - 474 - 7.9.jpg" />
+    <Content Include="Assets\1-full\Frame22680 - 475 - 7.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame22740 - 476 - 7.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame2280 - 135 - 2.25.jpg" />
+    <Content Include="Assets\1-full\Frame22800 - 477 - 7.95.jpg" />
+    <Content Include="Assets\1-full\Frame22860 - 478 - 7.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame22920 - 479 - 7.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame22980 - 480 - 8.jpg" />
+    <Content Include="Assets\1-full\Frame23040 - 481 - 8.01666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame23100 - 482 - 8.03333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame23160 - 483 - 8.05.jpg" />
+    <Content Include="Assets\1-full\Frame23220 - 484 - 8.06666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame23280 - 485 - 8.08333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame23340 - 486 - 8.1.jpg" />
+    <Content Include="Assets\1-full\Frame2340 - 136 - 2.26666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame23400 - 487 - 8.11666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame23460 - 488 - 8.13333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame23520 - 489 - 8.15.jpg" />
+    <Content Include="Assets\1-full\Frame23580 - 490 - 8.16666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame23640 - 491 - 8.18333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame23700 - 492 - 8.2.jpg" />
+    <Content Include="Assets\1-full\Frame23760 - 493 - 8.21666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame23820 - 494 - 8.23333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame23880 - 495 - 8.25.jpg" />
+    <Content Include="Assets\1-full\Frame23940 - 496 - 8.26666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame240 - 101 - 1.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame2400 - 137 - 2.28333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame24000 - 497 - 8.28333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame24060 - 498 - 8.3.jpg" />
+    <Content Include="Assets\1-full\Frame24120 - 499 - 8.31666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame24180 - 500 - 8.33333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame24240 - 501 - 8.35.jpg" />
+    <Content Include="Assets\1-full\Frame24300 - 502 - 8.36666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame24360 - 503 - 8.38333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame24420 - 504 - 8.4.jpg" />
+    <Content Include="Assets\1-full\Frame24480 - 505 - 8.41666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame24540 - 506 - 8.43333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame2460 - 138 - 2.3.jpg" />
+    <Content Include="Assets\1-full\Frame24600 - 507 - 8.45.jpg" />
+    <Content Include="Assets\1-full\Frame24660 - 508 - 8.46666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame24720 - 509 - 8.48333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame24780 - 510 - 8.5.jpg" />
+    <Content Include="Assets\1-full\Frame24840 - 511 - 8.51666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame24900 - 512 - 8.53333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame24960 - 513 - 8.55.jpg" />
+    <Content Include="Assets\1-full\Frame25020 - 514 - 8.56666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame25080 - 515 - 8.58333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame25140 - 516 - 8.6.jpg" />
+    <Content Include="Assets\1-full\Frame2520 - 139 - 2.31666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame25200 - 517 - 8.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame25260 - 518 - 8.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame25320 - 519 - 8.65.jpg" />
+    <Content Include="Assets\1-full\Frame25380 - 520 - 8.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame25440 - 521 - 8.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame25500 - 522 - 8.7.jpg" />
+    <Content Include="Assets\1-full\Frame25560 - 523 - 8.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame25620 - 524 - 8.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame25680 - 525 - 8.75.jpg" />
+    <Content Include="Assets\1-full\Frame25740 - 526 - 8.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame2580 - 140 - 2.33333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame25800 - 527 - 8.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame25860 - 528 - 8.8.jpg" />
+    <Content Include="Assets\1-full\Frame25920 - 529 - 8.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame25980 - 530 - 8.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame26040 - 531 - 8.85.jpg" />
+    <Content Include="Assets\1-full\Frame26100 - 532 - 8.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame26160 - 533 - 8.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame26220 - 534 - 8.9.jpg" />
+    <Content Include="Assets\1-full\Frame26280 - 535 - 8.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame26340 - 536 - 8.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame2640 - 141 - 2.35.jpg" />
+    <Content Include="Assets\1-full\Frame26400 - 537 - 8.95.jpg" />
+    <Content Include="Assets\1-full\Frame26460 - 538 - 8.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame26520 - 539 - 8.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame26580 - 540 - 9.jpg" />
+    <Content Include="Assets\1-full\Frame26640 - 541 - 9.01666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame26700 - 542 - 9.03333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame26760 - 543 - 9.05.jpg" />
+    <Content Include="Assets\1-full\Frame26820 - 544 - 9.06666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame26880 - 545 - 9.08333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame26940 - 546 - 9.1.jpg" />
+    <Content Include="Assets\1-full\Frame2700 - 142 - 2.36666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame27000 - 547 - 9.11666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame27060 - 548 - 9.13333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame27120 - 549 - 9.15.jpg" />
+    <Content Include="Assets\1-full\Frame27180 - 550 - 9.16666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame27240 - 551 - 9.18333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame27300 - 552 - 9.2.jpg" />
+    <Content Include="Assets\1-full\Frame27360 - 553 - 9.21666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame27420 - 554 - 9.23333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame27480 - 555 - 9.25.jpg" />
+    <Content Include="Assets\1-full\Frame27540 - 556 - 9.26666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame2760 - 143 - 2.38333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame27600 - 557 - 9.28333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame27660 - 558 - 9.3.jpg" />
+    <Content Include="Assets\1-full\Frame27720 - 559 - 9.31666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame27780 - 560 - 9.33333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame27840 - 561 - 9.35.jpg" />
+    <Content Include="Assets\1-full\Frame27900 - 562 - 9.36666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame27960 - 563 - 9.38333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame28020 - 564 - 9.4.jpg" />
+    <Content Include="Assets\1-full\Frame28080 - 565 - 9.41666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame28140 - 566 - 9.43333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame2820 - 144 - 2.4.jpg" />
+    <Content Include="Assets\1-full\Frame28200 - 567 - 9.45.jpg" />
+    <Content Include="Assets\1-full\Frame28260 - 568 - 9.46666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame28320 - 569 - 9.48333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame28380 - 570 - 9.5.jpg" />
+    <Content Include="Assets\1-full\Frame28440 - 571 - 9.51666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame28500 - 572 - 9.53333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame28560 - 573 - 9.55.jpg" />
+    <Content Include="Assets\1-full\Frame28620 - 574 - 9.56666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame28680 - 575 - 9.58333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame28740 - 576 - 9.6.jpg" />
+    <Content Include="Assets\1-full\Frame2880 - 145 - 2.41666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame28800 - 577 - 9.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame28860 - 578 - 9.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame28920 - 579 - 9.65.jpg" />
+    <Content Include="Assets\1-full\Frame28980 - 580 - 9.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame29040 - 581 - 9.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame29100 - 582 - 9.7.jpg" />
+    <Content Include="Assets\1-full\Frame29160 - 583 - 9.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame29220 - 584 - 9.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame29280 - 585 - 9.75.jpg" />
+    <Content Include="Assets\1-full\Frame29340 - 586 - 9.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame2940 - 146 - 2.43333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame29400 - 587 - 9.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame29460 - 588 - 9.8.jpg" />
+    <Content Include="Assets\1-full\Frame29520 - 589 - 9.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame29580 - 590 - 9.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame29640 - 591 - 9.85.jpg" />
+    <Content Include="Assets\1-full\Frame29700 - 592 - 9.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame29760 - 593 - 9.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame29820 - 594 - 9.9.jpg" />
+    <Content Include="Assets\1-full\Frame29880 - 595 - 9.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame29940 - 596 - 9.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame300 - 102 - 1.7.jpg" />
+    <Content Include="Assets\1-full\Frame3000 - 147 - 2.45.jpg" />
+    <Content Include="Assets\1-full\Frame30000 - 597 - 9.95.jpg" />
+    <Content Include="Assets\1-full\Frame30060 - 598 - 9.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame30120 - 599 - 9.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame30180 - 600 - 10.jpg" />
+    <Content Include="Assets\1-full\Frame30240 - 601 - 10.0166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame30300 - 602 - 10.0333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame30360 - 603 - 10.05.jpg" />
+    <Content Include="Assets\1-full\Frame30420 - 604 - 10.0666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame30480 - 605 - 10.0833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame30540 - 606 - 10.1.jpg" />
+    <Content Include="Assets\1-full\Frame3060 - 148 - 2.46666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame30600 - 607 - 10.1166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame30660 - 608 - 10.1333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame30720 - 609 - 10.15.jpg" />
+    <Content Include="Assets\1-full\Frame30780 - 610 - 10.1666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame30840 - 611 - 10.1833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame30900 - 612 - 10.2.jpg" />
+    <Content Include="Assets\1-full\Frame30960 - 613 - 10.2166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame31020 - 614 - 10.2333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame31080 - 615 - 10.25.jpg" />
+    <Content Include="Assets\1-full\Frame31140 - 616 - 10.2666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame3120 - 149 - 2.48333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame31200 - 617 - 10.2833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame31260 - 618 - 10.3.jpg" />
+    <Content Include="Assets\1-full\Frame31320 - 619 - 10.3166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame31380 - 620 - 10.3333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame31440 - 621 - 10.35.jpg" />
+    <Content Include="Assets\1-full\Frame31500 - 622 - 10.3666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame31560 - 623 - 10.3833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame31620 - 624 - 10.4.jpg" />
+    <Content Include="Assets\1-full\Frame31680 - 625 - 10.4166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame31740 - 626 - 10.4333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame3180 - 150 - 2.5.jpg" />
+    <Content Include="Assets\1-full\Frame31800 - 627 - 10.45.jpg" />
+    <Content Include="Assets\1-full\Frame31860 - 628 - 10.4666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame31920 - 629 - 10.4833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame31980 - 630 - 10.5.jpg" />
+    <Content Include="Assets\1-full\Frame32040 - 631 - 10.5166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame32100 - 632 - 10.5333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame32160 - 633 - 10.55.jpg" />
+    <Content Include="Assets\1-full\Frame32220 - 634 - 10.5666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame32280 - 635 - 10.5833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame32340 - 636 - 10.6.jpg" />
+    <Content Include="Assets\1-full\Frame3240 - 151 - 2.51666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame32400 - 637 - 10.6166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame32460 - 638 - 10.6333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame32520 - 639 - 10.65.jpg" />
+    <Content Include="Assets\1-full\Frame32580 - 640 - 10.6666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame32640 - 641 - 10.6833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame32700 - 642 - 10.7.jpg" />
+    <Content Include="Assets\1-full\Frame32760 - 643 - 10.7166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame32820 - 644 - 10.7333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame32880 - 645 - 10.75.jpg" />
+    <Content Include="Assets\1-full\Frame32940 - 646 - 10.7666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame3300 - 152 - 2.53333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame33000 - 647 - 10.7833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame33060 - 648 - 10.8.jpg" />
+    <Content Include="Assets\1-full\Frame33120 - 649 - 10.8166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame33180 - 650 - 10.8333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame33240 - 651 - 10.85.jpg" />
+    <Content Include="Assets\1-full\Frame33300 - 652 - 10.8666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame33360 - 653 - 10.8833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame33420 - 654 - 10.9.jpg" />
+    <Content Include="Assets\1-full\Frame33480 - 655 - 10.9166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame33540 - 656 - 10.9333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame3360 - 153 - 2.55.jpg" />
+    <Content Include="Assets\1-full\Frame33600 - 657 - 10.95.jpg" />
+    <Content Include="Assets\1-full\Frame33660 - 658 - 10.9666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame33720 - 659 - 10.9833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame33780 - 660 - 11.jpg" />
+    <Content Include="Assets\1-full\Frame33840 - 661 - 11.0166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame33900 - 662 - 11.0333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame33960 - 663 - 11.05.jpg" />
+    <Content Include="Assets\1-full\Frame34020 - 664 - 11.0666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame34080 - 665 - 11.0833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame34140 - 666 - 11.1.jpg" />
+    <Content Include="Assets\1-full\Frame3420 - 154 - 2.56666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame34200 - 667 - 11.1166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame34260 - 668 - 11.1333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame34320 - 669 - 11.15.jpg" />
+    <Content Include="Assets\1-full\Frame34380 - 670 - 11.1666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame34440 - 671 - 11.1833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame34500 - 672 - 11.2.jpg" />
+    <Content Include="Assets\1-full\Frame34560 - 673 - 11.2166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame34620 - 674 - 11.2333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame34680 - 675 - 11.25.jpg" />
+    <Content Include="Assets\1-full\Frame34740 - 676 - 11.2666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame3480 - 155 - 2.58333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame34800 - 677 - 11.2833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame34860 - 678 - 11.3.jpg" />
+    <Content Include="Assets\1-full\Frame34920 - 679 - 11.3166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame34980 - 680 - 11.3333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame35040 - 681 - 11.35.jpg" />
+    <Content Include="Assets\1-full\Frame35100 - 682 - 11.3666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame35160 - 683 - 11.3833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame35220 - 684 - 11.4.jpg" />
+    <Content Include="Assets\1-full\Frame35280 - 685 - 11.4166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame35340 - 686 - 11.4333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame3540 - 156 - 2.6.jpg" />
+    <Content Include="Assets\1-full\Frame35400 - 687 - 11.45.jpg" />
+    <Content Include="Assets\1-full\Frame35460 - 688 - 11.4666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame35520 - 689 - 11.4833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame35580 - 690 - 11.5.jpg" />
+    <Content Include="Assets\1-full\Frame35640 - 691 - 11.5166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame35700 - 692 - 11.5333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame35760 - 693 - 11.55.jpg" />
+    <Content Include="Assets\1-full\Frame35820 - 694 - 11.5666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame35880 - 695 - 11.5833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame35940 - 696 - 11.6.jpg" />
+    <Content Include="Assets\1-full\Frame360 - 103 - 1.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame3600 - 157 - 2.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame36000 - 697 - 11.6166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame36060 - 698 - 11.6333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame36120 - 699 - 11.65.jpg" />
+    <Content Include="Assets\1-full\Frame36180 - 700 - 11.6666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame36240 - 701 - 11.6833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame36300 - 702 - 11.7.jpg" />
+    <Content Include="Assets\1-full\Frame36360 - 703 - 11.7166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame36420 - 704 - 11.7333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame36480 - 705 - 11.75.jpg" />
+    <Content Include="Assets\1-full\Frame36540 - 706 - 11.7666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame3660 - 158 - 2.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame36600 - 707 - 11.7833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame36660 - 708 - 11.8.jpg" />
+    <Content Include="Assets\1-full\Frame36720 - 709 - 11.8166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame36780 - 710 - 11.8333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame36840 - 711 - 11.85.jpg" />
+    <Content Include="Assets\1-full\Frame36900 - 712 - 11.8666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame36960 - 713 - 11.8833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame37020 - 714 - 11.9.jpg" />
+    <Content Include="Assets\1-full\Frame37080 - 715 - 11.9166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame37140 - 716 - 11.9333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame3720 - 159 - 2.65.jpg" />
+    <Content Include="Assets\1-full\Frame37200 - 717 - 11.95.jpg" />
+    <Content Include="Assets\1-full\Frame37260 - 718 - 11.9666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame37320 - 719 - 11.9833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame37380 - 720 - 12.jpg" />
+    <Content Include="Assets\1-full\Frame37440 - 721 - 12.0166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame37500 - 722 - 12.0333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame37560 - 723 - 12.05.jpg" />
+    <Content Include="Assets\1-full\Frame37620 - 724 - 12.0666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame37680 - 725 - 12.0833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame37740 - 726 - 12.1.jpg" />
+    <Content Include="Assets\1-full\Frame3780 - 160 - 2.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame37800 - 727 - 12.1166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame37860 - 728 - 12.1333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame37920 - 729 - 12.15.jpg" />
+    <Content Include="Assets\1-full\Frame37980 - 730 - 12.1666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame38040 - 731 - 12.1833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame38100 - 732 - 12.2.jpg" />
+    <Content Include="Assets\1-full\Frame38160 - 733 - 12.2166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame38220 - 734 - 12.2333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame38280 - 735 - 12.25.jpg" />
+    <Content Include="Assets\1-full\Frame38340 - 736 - 12.2666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame3840 - 161 - 2.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame38400 - 737 - 12.2833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame38460 - 738 - 12.3.jpg" />
+    <Content Include="Assets\1-full\Frame38520 - 739 - 12.3166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame38580 - 740 - 12.3333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame38640 - 741 - 12.35.jpg" />
+    <Content Include="Assets\1-full\Frame38700 - 742 - 12.3666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame38760 - 743 - 12.3833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame38820 - 744 - 12.4.jpg" />
+    <Content Include="Assets\1-full\Frame38880 - 745 - 12.4166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame38940 - 746 - 12.4333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame3900 - 162 - 2.7.jpg" />
+    <Content Include="Assets\1-full\Frame39000 - 747 - 12.45.jpg" />
+    <Content Include="Assets\1-full\Frame39060 - 748 - 12.4666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame39120 - 749 - 12.4833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame39180 - 750 - 12.5.jpg" />
+    <Content Include="Assets\1-full\Frame39240 - 751 - 12.5166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame39300 - 752 - 12.5333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame39360 - 753 - 12.55.jpg" />
+    <Content Include="Assets\1-full\Frame39420 - 754 - 12.5666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame39480 - 755 - 12.5833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame39540 - 756 - 12.6.jpg" />
+    <Content Include="Assets\1-full\Frame3960 - 163 - 2.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame39600 - 757 - 12.6166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame39660 - 758 - 12.6333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame39720 - 759 - 12.65.jpg" />
+    <Content Include="Assets\1-full\Frame39780 - 760 - 12.6666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame39840 - 761 - 12.6833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame39900 - 762 - 12.7.jpg" />
+    <Content Include="Assets\1-full\Frame39960 - 763 - 12.7166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame40020 - 764 - 12.7333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame40080 - 765 - 12.75.jpg" />
+    <Content Include="Assets\1-full\Frame40140 - 766 - 12.7666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame4020 - 164 - 2.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame40200 - 767 - 12.7833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame40260 - 768 - 12.8.jpg" />
+    <Content Include="Assets\1-full\Frame40320 - 769 - 12.8166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame40380 - 770 - 12.8333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame40440 - 771 - 12.85.jpg" />
+    <Content Include="Assets\1-full\Frame40500 - 772 - 12.8666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame40560 - 773 - 12.8833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame40620 - 774 - 12.9.jpg" />
+    <Content Include="Assets\1-full\Frame40680 - 775 - 12.9166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame40740 - 776 - 12.9333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame4080 - 165 - 2.75.jpg" />
+    <Content Include="Assets\1-full\Frame40800 - 777 - 12.95.jpg" />
+    <Content Include="Assets\1-full\Frame40860 - 778 - 12.9666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame40920 - 779 - 12.9833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame40980 - 780 - 13.jpg" />
+    <Content Include="Assets\1-full\Frame41040 - 781 - 13.0166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame41100 - 782 - 13.0333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame41160 - 783 - 13.05.jpg" />
+    <Content Include="Assets\1-full\Frame41220 - 784 - 13.0666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame41280 - 785 - 13.0833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame41340 - 786 - 13.1.jpg" />
+    <Content Include="Assets\1-full\Frame4140 - 166 - 2.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame41400 - 787 - 13.1166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame41460 - 788 - 13.1333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame41520 - 789 - 13.15.jpg" />
+    <Content Include="Assets\1-full\Frame41580 - 790 - 13.1666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame41640 - 791 - 13.1833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame41700 - 792 - 13.2.jpg" />
+    <Content Include="Assets\1-full\Frame41760 - 793 - 13.2166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame41820 - 794 - 13.2333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame41880 - 795 - 13.25.jpg" />
+    <Content Include="Assets\1-full\Frame41940 - 796 - 13.2666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame420 - 104 - 1.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame4200 - 167 - 2.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame42000 - 797 - 13.2833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame42060 - 798 - 13.3.jpg" />
+    <Content Include="Assets\1-full\Frame42120 - 799 - 13.3166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame42180 - 800 - 13.3333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame42240 - 801 - 13.35.jpg" />
+    <Content Include="Assets\1-full\Frame42300 - 802 - 13.3666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame42360 - 803 - 13.3833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame42420 - 804 - 13.4.jpg" />
+    <Content Include="Assets\1-full\Frame42480 - 805 - 13.4166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame42540 - 806 - 13.4333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame4260 - 168 - 2.8.jpg" />
+    <Content Include="Assets\1-full\Frame42600 - 807 - 13.45.jpg" />
+    <Content Include="Assets\1-full\Frame42660 - 808 - 13.4666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame42720 - 809 - 13.4833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame42780 - 810 - 13.5.jpg" />
+    <Content Include="Assets\1-full\Frame42840 - 811 - 13.5166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame42900 - 812 - 13.5333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame42960 - 813 - 13.55.jpg" />
+    <Content Include="Assets\1-full\Frame43020 - 814 - 13.5666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame43080 - 815 - 13.5833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame43140 - 816 - 13.6.jpg" />
+    <Content Include="Assets\1-full\Frame4320 - 169 - 2.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame43200 - 817 - 13.6166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame43260 - 818 - 13.6333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame43320 - 819 - 13.65.jpg" />
+    <Content Include="Assets\1-full\Frame43380 - 820 - 13.6666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame43440 - 821 - 13.6833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame43500 - 822 - 13.7.jpg" />
+    <Content Include="Assets\1-full\Frame43560 - 823 - 13.7166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame43620 - 824 - 13.7333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame43680 - 825 - 13.75.jpg" />
+    <Content Include="Assets\1-full\Frame43740 - 826 - 13.7666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame4380 - 170 - 2.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame43800 - 827 - 13.7833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame43860 - 828 - 13.8.jpg" />
+    <Content Include="Assets\1-full\Frame43920 - 829 - 13.8166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame43980 - 830 - 13.8333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame44040 - 831 - 13.85.jpg" />
+    <Content Include="Assets\1-full\Frame44100 - 832 - 13.8666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame44160 - 833 - 13.8833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame44220 - 834 - 13.9.jpg" />
+    <Content Include="Assets\1-full\Frame44280 - 835 - 13.9166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame44340 - 836 - 13.9333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame4440 - 171 - 2.85.jpg" />
+    <Content Include="Assets\1-full\Frame44400 - 837 - 13.95.jpg" />
+    <Content Include="Assets\1-full\Frame44460 - 838 - 13.9666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame44520 - 839 - 13.9833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame44580 - 840 - 14.jpg" />
+    <Content Include="Assets\1-full\Frame44640 - 841 - 14.0166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame44700 - 842 - 14.0333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame44760 - 843 - 14.05.jpg" />
+    <Content Include="Assets\1-full\Frame44820 - 844 - 14.0666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame44880 - 845 - 14.0833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame44940 - 846 - 14.1.jpg" />
+    <Content Include="Assets\1-full\Frame4500 - 172 - 2.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame45000 - 847 - 14.1166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame45060 - 848 - 14.1333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame45120 - 849 - 14.15.jpg" />
+    <Content Include="Assets\1-full\Frame45180 - 850 - 14.1666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame45240 - 851 - 14.1833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame45300 - 852 - 14.2.jpg" />
+    <Content Include="Assets\1-full\Frame45360 - 853 - 14.2166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame45420 - 854 - 14.2333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame45480 - 855 - 14.25.jpg" />
+    <Content Include="Assets\1-full\Frame45540 - 856 - 14.2666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame4560 - 173 - 2.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame45600 - 857 - 14.2833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame45660 - 858 - 14.3.jpg" />
+    <Content Include="Assets\1-full\Frame45720 - 859 - 14.3166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame45780 - 860 - 14.3333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame45840 - 861 - 14.35.jpg" />
+    <Content Include="Assets\1-full\Frame45900 - 862 - 14.3666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame45960 - 863 - 14.3833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame46020 - 864 - 14.4.jpg" />
+    <Content Include="Assets\1-full\Frame46080 - 865 - 14.4166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame46140 - 866 - 14.4333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame4620 - 174 - 2.9.jpg" />
+    <Content Include="Assets\1-full\Frame46200 - 867 - 14.45.jpg" />
+    <Content Include="Assets\1-full\Frame46260 - 868 - 14.4666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame46320 - 869 - 14.4833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame46380 - 870 - 14.5.jpg" />
+    <Content Include="Assets\1-full\Frame46440 - 871 - 14.5166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame46500 - 872 - 14.5333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame46560 - 873 - 14.55.jpg" />
+    <Content Include="Assets\1-full\Frame46620 - 874 - 14.5666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame46680 - 875 - 14.5833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame46740 - 876 - 14.6.jpg" />
+    <Content Include="Assets\1-full\Frame4680 - 175 - 2.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame46800 - 877 - 14.6166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame46860 - 878 - 14.6333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame46920 - 879 - 14.65.jpg" />
+    <Content Include="Assets\1-full\Frame46980 - 880 - 14.6666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame47040 - 881 - 14.6833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame47100 - 882 - 14.7.jpg" />
+    <Content Include="Assets\1-full\Frame47160 - 883 - 14.7166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame47220 - 884 - 14.7333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame47280 - 885 - 14.75.jpg" />
+    <Content Include="Assets\1-full\Frame47340 - 886 - 14.7666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame4740 - 176 - 2.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame47400 - 887 - 14.7833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame47460 - 888 - 14.8.jpg" />
+    <Content Include="Assets\1-full\Frame47520 - 889 - 14.8166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame47580 - 890 - 14.8333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame47640 - 891 - 14.85.jpg" />
+    <Content Include="Assets\1-full\Frame47700 - 892 - 14.8666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame47760 - 893 - 14.8833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame47820 - 894 - 14.9.jpg" />
+    <Content Include="Assets\1-full\Frame47880 - 895 - 14.9166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame47940 - 896 - 14.9333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame480 - 105 - 1.75.jpg" />
+    <Content Include="Assets\1-full\Frame4800 - 177 - 2.95.jpg" />
+    <Content Include="Assets\1-full\Frame48000 - 897 - 14.95.jpg" />
+    <Content Include="Assets\1-full\Frame48060 - 898 - 14.9666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame48120 - 899 - 14.9833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame48180 - 900 - 15.jpg" />
+    <Content Include="Assets\1-full\Frame48240 - 901 - 15.0166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame48300 - 902 - 15.0333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame48360 - 903 - 15.05.jpg" />
+    <Content Include="Assets\1-full\Frame48420 - 904 - 15.0666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame48480 - 905 - 15.0833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame48540 - 906 - 15.1.jpg" />
+    <Content Include="Assets\1-full\Frame4860 - 178 - 2.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame48600 - 907 - 15.1166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame48660 - 908 - 15.1333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame48720 - 909 - 15.15.jpg" />
+    <Content Include="Assets\1-full\Frame48780 - 910 - 15.1666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame48840 - 911 - 15.1833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame48900 - 912 - 15.2.jpg" />
+    <Content Include="Assets\1-full\Frame48960 - 913 - 15.2166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame49020 - 914 - 15.2333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame49080 - 915 - 15.25.jpg" />
+    <Content Include="Assets\1-full\Frame49140 - 916 - 15.2666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame4920 - 179 - 2.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame49200 - 917 - 15.2833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame49260 - 918 - 15.3.jpg" />
+    <Content Include="Assets\1-full\Frame49320 - 919 - 15.3166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame49380 - 920 - 15.3333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame49440 - 921 - 15.35.jpg" />
+    <Content Include="Assets\1-full\Frame49500 - 922 - 15.3666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame49560 - 923 - 15.3833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame49620 - 924 - 15.4.jpg" />
+    <Content Include="Assets\1-full\Frame49680 - 925 - 15.4166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame49740 - 926 - 15.4333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame4980 - 180 - 3.jpg" />
+    <Content Include="Assets\1-full\Frame49800 - 927 - 15.45.jpg" />
+    <Content Include="Assets\1-full\Frame49860 - 928 - 15.4666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame49920 - 929 - 15.4833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame49980 - 930 - 15.5.jpg" />
+    <Content Include="Assets\1-full\Frame50040 - 931 - 15.5166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame50100 - 932 - 15.5333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame50160 - 933 - 15.55.jpg" />
+    <Content Include="Assets\1-full\Frame50220 - 934 - 15.5666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame50280 - 935 - 15.5833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame50340 - 936 - 15.6.jpg" />
+    <Content Include="Assets\1-full\Frame5040 - 181 - 3.01666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame50400 - 937 - 15.6166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame50460 - 938 - 15.6333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame50520 - 939 - 15.65.jpg" />
+    <Content Include="Assets\1-full\Frame50580 - 940 - 15.6666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame50640 - 941 - 15.6833333333333.jpg" />
+    <Content Include="Assets\1-full\Frame50700 - 942 - 15.7.jpg" />
+    <Content Include="Assets\1-full\Frame50760 - 943 - 15.7166666666667.jpg" />
+    <Content Include="Assets\1-full\Frame5100 - 182 - 3.03333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame5160 - 183 - 3.05.jpg" />
+    <Content Include="Assets\1-full\Frame5220 - 184 - 3.06666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame5280 - 185 - 3.08333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame5340 - 186 - 3.1.jpg" />
+    <Content Include="Assets\1-full\Frame540 - 106 - 1.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame5400 - 187 - 3.11666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame5460 - 188 - 3.13333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame5520 - 189 - 3.15.jpg" />
+    <Content Include="Assets\1-full\Frame5580 - 190 - 3.16666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame5640 - 191 - 3.18333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame5700 - 192 - 3.2.jpg" />
+    <Content Include="Assets\1-full\Frame5760 - 193 - 3.21666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame5820 - 194 - 3.23333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame5880 - 195 - 3.25.jpg" />
+    <Content Include="Assets\1-full\Frame5940 - 196 - 3.26666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame60 - 98 - 1.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame600 - 107 - 1.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame6000 - 197 - 3.28333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame6060 - 198 - 3.3.jpg" />
+    <Content Include="Assets\1-full\Frame6120 - 199 - 3.31666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame6180 - 200 - 3.33333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame6240 - 201 - 3.35.jpg" />
+    <Content Include="Assets\1-full\Frame6300 - 202 - 3.36666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame6360 - 203 - 3.38333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame6420 - 204 - 3.4.jpg" />
+    <Content Include="Assets\1-full\Frame6480 - 205 - 3.41666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame6540 - 206 - 3.43333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame660 - 108 - 1.8.jpg" />
+    <Content Include="Assets\1-full\Frame6600 - 207 - 3.45.jpg" />
+    <Content Include="Assets\1-full\Frame6660 - 208 - 3.46666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame6720 - 209 - 3.48333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame6780 - 210 - 3.5.jpg" />
+    <Content Include="Assets\1-full\Frame6840 - 211 - 3.51666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame6900 - 212 - 3.53333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame6960 - 213 - 3.55.jpg" />
+    <Content Include="Assets\1-full\Frame7020 - 214 - 3.56666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame7080 - 215 - 3.58333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame7140 - 216 - 3.6.jpg" />
+    <Content Include="Assets\1-full\Frame720 - 109 - 1.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame7200 - 217 - 3.61666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame7260 - 218 - 3.63333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame7320 - 219 - 3.65.jpg" />
+    <Content Include="Assets\1-full\Frame7380 - 220 - 3.66666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame7440 - 221 - 3.68333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame7500 - 222 - 3.7.jpg" />
+    <Content Include="Assets\1-full\Frame7560 - 223 - 3.71666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame7620 - 224 - 3.73333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame7680 - 225 - 3.75.jpg" />
+    <Content Include="Assets\1-full\Frame7740 - 226 - 3.76666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame780 - 110 - 1.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame7800 - 227 - 3.78333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame7860 - 228 - 3.8.jpg" />
+    <Content Include="Assets\1-full\Frame7920 - 229 - 3.81666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame7980 - 230 - 3.83333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame8040 - 231 - 3.85.jpg" />
+    <Content Include="Assets\1-full\Frame8100 - 232 - 3.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame8160 - 233 - 3.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame8220 - 234 - 3.9.jpg" />
+    <Content Include="Assets\1-full\Frame8280 - 235 - 3.91666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame8340 - 236 - 3.93333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame840 - 111 - 1.85.jpg" />
+    <Content Include="Assets\1-full\Frame8400 - 237 - 3.95.jpg" />
+    <Content Include="Assets\1-full\Frame8460 - 238 - 3.96666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame8520 - 239 - 3.98333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame8580 - 240 - 4.jpg" />
+    <Content Include="Assets\1-full\Frame8640 - 241 - 4.01666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame8700 - 242 - 4.03333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame8760 - 243 - 4.05.jpg" />
+    <Content Include="Assets\1-full\Frame8820 - 244 - 4.06666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame8880 - 245 - 4.08333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame8940 - 246 - 4.1.jpg" />
+    <Content Include="Assets\1-full\Frame900 - 112 - 1.86666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame9000 - 247 - 4.11666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame9060 - 248 - 4.13333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame9120 - 249 - 4.15.jpg" />
+    <Content Include="Assets\1-full\Frame9180 - 250 - 4.16666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame9240 - 251 - 4.18333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame9300 - 252 - 4.2.jpg" />
+    <Content Include="Assets\1-full\Frame9360 - 253 - 4.21666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame9420 - 254 - 4.23333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame9480 - 255 - 4.25.jpg" />
+    <Content Include="Assets\1-full\Frame9540 - 256 - 4.26666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame960 - 113 - 1.88333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame9600 - 257 - 4.28333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame9660 - 258 - 4.3.jpg" />
+    <Content Include="Assets\1-full\Frame9720 - 259 - 4.31666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame9780 - 260 - 4.33333333333333.jpg" />
+    <Content Include="Assets\1-full\Frame9840 - 261 - 4.35.jpg" />
+    <Content Include="Assets\1-full\Frame9900 - 262 - 4.36666666666667.jpg" />
+    <Content Include="Assets\1-full\Frame9960 - 263 - 4.38333333333333.jpg" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
