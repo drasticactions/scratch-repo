@@ -20,7 +20,7 @@ namespace DiaperChrisFitbitMap
 
         static async Task MainAsync()
         {
-            int movienumber = 4;
+            int movienumber = 12;
             using (var videoFrameReader = new VideoFrameReader($@"{movienumber}.mp4"))
             {
                 var startTime = 10;

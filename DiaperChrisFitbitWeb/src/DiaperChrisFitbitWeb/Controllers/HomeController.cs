@@ -26,6 +26,66 @@ namespace DiaperChrisFitbitWeb.Controllers
             return View();
         }
 
+        public IActionResult UrbanLegends()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/urbanlegends.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
+        public IActionResult DevilsShare()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/devilsshare.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
+        public IActionResult HorrificHorror()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/horrifichorror.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
+        public IActionResult RedLake()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/redlake.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
+        public IActionResult Taken()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/taken.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
+        public IActionResult Lucius()
+        {
+            var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/luciusII.json");
+            var result = JsonConvert.DeserializeObject<List<FitbitRate>>(mybonesJson);
+            return View(new GameFitbitModel()
+            {
+                FitbitResults = result
+            });
+        }
+
         public IActionResult MyBones()
         {
             var mybonesJson = System.IO.File.ReadAllText(_hostEnvironment.WebRootPath + "/js/mybones.json");

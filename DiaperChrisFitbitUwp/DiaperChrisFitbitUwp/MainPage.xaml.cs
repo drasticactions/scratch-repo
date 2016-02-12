@@ -44,14 +44,15 @@ namespace DiaperChrisFitbitUwp
         {
             var fitbitRates = new List<FitbitRate>();
             var failCount = 0;
-            StorageFolder pictureFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\9-full");
+            StorageFolder pictureFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\6-full");
             IReadOnlyList<StorageFile> fileList = await pictureFolder.GetFilesAsync();
             foreach (StorageFile file in fileList)
             {
                 var filename = file.DisplayName;
                 var splitfilename = filename.Split('-');
-
-                var writeableBitmap = await CropBitmap.GetCroppedBitmapAsync(file, new Point(1194, 2), new Size(30, 20), 2);
+                // left 28, 11
+                // right 1194, 2
+                var writeableBitmap = await CropBitmap.GetCroppedBitmapAsync(file, new Point(1205, 3), new Size(30, 20), 2);
                 var result = await ocrEngine.RecognizeAsync(SoftwareBitmap.CreateCopyFromBuffer(
                     writeableBitmap.PixelBuffer,
                     BitmapPixelFormat.Bgra8,
@@ -86,11 +87,23 @@ namespace DiaperChrisFitbitUwp
                             FileName = file.Name
                         });
                     }
+                    else
+                    {
+                        fitbitRates.Add(new FitbitRate()
+                        {
+                            HeartRate = 80,
+                            StartTime = 12,
+                            Time = TimeSpan.FromSeconds(80).TotalMinutes,
+                            FileName = file.Name
+                        });
+                    }
+
                     failCount = failCount + 1;
                 }
 
             }
-            OutputBox.Text = JsonConvert.SerializeObject(fitbitRates, Formatting.Indented);
+            var text = JsonConvert.SerializeObject(fitbitRates, Formatting.Indented);
+            OutputBox.Text = text;
         }
 
 
