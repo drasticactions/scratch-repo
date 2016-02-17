@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter-Shredder.CSharp.Plugins", "Twitter-Shredder.CSharp.Plugins.csproj", "{5014384B-8563-57F6-D793-3D4F981497EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter-Shredder.CSharp", "Twitter-Shredder.CSharp.csproj", "{29F4F83C-C2C9-8FCB-7F61-0923973119F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter-Shredder.CSharp.Editor", "Twitter-Shredder.CSharp.Editor.csproj", "{BAA9DD77-9960-1843-C182-EDA0A1098793}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5014384B-8563-57F6-D793-3D4F981497EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5014384B-8563-57F6-D793-3D4F981497EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5014384B-8563-57F6-D793-3D4F981497EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5014384B-8563-57F6-D793-3D4F981497EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F4F83C-C2C9-8FCB-7F61-0923973119F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F4F83C-C2C9-8FCB-7F61-0923973119F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F4F83C-C2C9-8FCB-7F61-0923973119F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F4F83C-C2C9-8FCB-7F61-0923973119F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAA9DD77-9960-1843-C182-EDA0A1098793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA9DD77-9960-1843-C182-EDA0A1098793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA9DD77-9960-1843-C182-EDA0A1098793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA9DD77-9960-1843-C182-EDA0A1098793}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
